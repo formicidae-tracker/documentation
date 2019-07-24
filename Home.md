@@ -17,6 +17,7 @@ This wiki pages describes the technical specification and the architecture of th
 
 These guides describes common task with the formicidae-tracker. These are absolute know how when using the system
 
+* [[Absolute know-how: Working with electronics safely]] 
 * [[User Guide: Controlling Climate]]
 * [[User Guide: Setting up the camera properly]]
 * [[User Guide: Refilling the humidifier]]
@@ -28,4 +29,6 @@ These guide describes maintaince task with the system, for example software upgr
 
 * [[Technical Guide: Uploading a new firmware]]
 * [[Technical Guide: Deploy a new software upgrade]]
+* [[Technical Guide: Mechanical Blueprints, Product Breakdown System and Assembly Guide]]
+
  
