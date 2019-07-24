@@ -1,10 +1,10 @@
-# Architecture description
+# Description
 
 --- here a future tikz graph showing all the electronics ---
 
 --- here a nicely written overall description of the electronics functionallities ---
 
-# Electronic Buses an power rails
+# Electronic Buses and Power Rails
 
 * Common Electronic Power Bus: 12V DC, max 5A.
 * Illumination Power Bus: 36V DC max 1.65A
