@@ -5,11 +5,12 @@ organized with a modular architecture, were each electronic board
 endorses a few role only, such has implementing the climate control
 loop, managing illumination, managing the humidifcation process...
 
-![Electronic Architecture](/tikz/electronic-architecture.png)
 
-The backbone of inter-device communication is done using a CAN bus. In
-order to firewall any electrical issue on the system, there are two
-galvanic isolation barrier that isolate the elements in three set:
+![Electronic Architecture](https://github.com/formicidae-tracker/documentation/raw/master/tikz/electronic-architecture.png)
+
+In order to firewall any electrical issue on the system, there are two
+galvanic isolation barriers that isolate the electronic components in
+three sets:
 
 * General Electronic with 12V Power rails
 * Power Illumination Electronic over 36V rails
@@ -18,18 +19,38 @@ galvanic isolation barrier that isolate the elements in three set:
 
 # Electronic Buses and Power Rails
 
-* Common Electronic Power Bus: 12V DC, max 5A.
-* Illumination Power Bus: 36V DC max 1.65A
-* Piezotransducer Alimentation: 24V AC
-* CAN Bus: CAN version 2A running the [libarke
-  protocol](https://github.com/formicidae-tracker/libarke.git)
-* RS232 Serial cable, connect all the electronics to the computer
-* CoaXPress CXP-6: interfaces computer to the camera via a
+
+The system features multiples power rails and communication bus. The main elements are :
+
+* a common electronic rails that power up most of the electronics. Its
+  power supply uses a 12V DC 60W powersupply, over a 5.5mm Outer
+  Diameter (O.D.)  2.5mm Inner Diameter (I.D.) Barrel Jack. Excepted
+  **Prometheus**, all the electronic boards uses a Molex 5557
+  connector to receive the power as depicted below.  ![12V power
+  connector](https://github.com/formicidae-tracker/documentation/raw/master/images/12V.png)
+* an illumination rails, for all the illumination equipment. Its power
+  supply uses a 36V DC 60W with a 5.5mm O.D. 2.1 mm I.D.
+* a CAN Bus: CAN version 2A running the [libarke
+  protocol](https://github.com/formicidae-tracker/libarke.git) that
+  handles most of the inter-device electronic communication.
+* a CoaXPress CXP-6 4x Link: that interfaces the computer and the camera via a
   framegrabber.
-* Helios Trigger: open collector TTL Input for triggering the
-  illumination system with the camera shutter
-* Helios Daisy Chain: vable dispatching a 6V and a 36V power rail, and
-  isolated trigger and data signal.
+* an illumination trigger cable that permits the synchronisation
+  between the camera and the infrared lighting. It uses an open
+  collector TTL Output of the framegrabber.
+* a Helios daisy chain that dispatches an isolated 6V and 36V power rails, and
+  balanced trigger and data signal.
+* A RS232 interface that connects the computer to the CAN Bus.
+
+
+
+
+> __IMPORTANT: The choice of a 36V smaller barrel jack (2.1mm I.D.)
+>  compared to the 12V (2.5mm I.D.) is motivated to avoid any
+>  mistakenly connection of the 36V Power Supply over the 12V
+>  rails. Physically forcing the 36V connector in the 12V plug
+>  would results in instantaneous and irreversible destruction of all
+>  the 12V powered electronics.__
 
 
 # Electronic Boards Description
