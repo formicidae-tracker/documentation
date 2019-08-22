@@ -1,0 +1,9 @@
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.pdf
+auto/
+*.log
+temp.tex
+tikz2pdf_temp.tex

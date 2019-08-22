@@ -1,0 +1,106 @@
+\begin{tikzpicture} [font=\sffamily,
+  pcfan/.style={draw=black,line width=0.1em},
+  notus/.style={draw=blue!50!gray,line width=0.1em},
+  i2c/.style={draw=gray,line width=0.1em},
+  helios/.style={draw=yellow!80!black,line width=0.1em},
+  vent/.style={draw=gray!50!white,double distance=2em,line width=0.5em},
+  cxp/.style={draw=orange,line width=0.1em},
+  rs232/.style={draw=cyan,dash dot dot,line width=0.1em},
+  can/.style={draw=magenta!80!gray,line width=0.1em},
+  V24AC/.style={draw=red!50!black,dotted,line width=0.3em},
+  V36/.style={draw=red!50!black,line width=0.3em},
+  trigger/.style={draw=cyan,line width=0.1em},
+  isolation/.style={draw=black!70!white,loosely dashed, line width=0.2em},
+  container/.style={rectangle,rounded corners=0.5em,fill=red!30!gray},
+  pcb/.style={rectangle,rounded corners,fill=green!20!gray, text centered, align=center},
+  label/.style={text width=6em,font=\sffamily\small, text centered},
+  fan/.pic={
+    \node[rectangle,minimum height=2em,minimum width=2em, rounded corners=0.1em,fill=gray] at (0,0){};
+    \draw[gray,fill=white] (0,0) circle(0.9em);
+    \draw[gray] (0.3em,0.1em) -- (0.75em,0.55em);
+    \draw[gray] (-0.1em,0.3em) -- (-0.55em,0.75em);
+    \draw[gray] (-0.3em,-0.1em) -- (-0.75em,-0.55em);
+    \draw[gray] (0.1em,-0.3em) -- (0.55em,-0.75em);
+    \draw[gray,fill=gray] (0,0) circle(0.3em);
+  },
+  camera/.pic={
+    \draw[red!40!black,rounded corners=0.2em,fill=red!40!black] (-2em,-1.25em) rectangle(2em,2em);
+    \draw[white!10!black,rounded corners=0.2em,fill=white!10!black] (-2em,-1.25em) rectangle(2em,-2em);
+    \draw[white!10!black,fill=white!10!black] (-1.15em,-2em) rectangle(1.15em,-3em);
+  },
+  light_module/.pic={
+    \draw[yellow!40!black,rounded corners=0.25em,fill=yellow!40!black] (-1.6em,-1.6em) rectangle(1.6em,1.6em);
+    \foreach \i in {-1.2em,-0.4em,0.4em,1.2em} \foreach \j in {-1.2em,-0.4em,0.4em,1.2em} \draw[white,fill=white] (\i,\j) circle(0.3em);
+    }
+  ]
+  \node[pcb,text width=10em,minimum height=6em] (zeus) at (0,0) {Zeus\\ \footnotesize Climate Control Board };
+  \node[pcb,text width=6em,below of= zeus,node distance=8em,xshift=-4em] (anemoi) {Anemoi\\ \tiny Humidity/Temperature Sensor};
+
+
+  \node[container,below of=zeus,node distance=8em,xshift=6em,text width=6em,text height=6em,text centered] (heater) {Heater};
+  \path (heater) ++ (0,-1em) pic {fan};
+  \node[pcb,above of=heater,node distance=1.5em] (notus) {Notus \\ \tiny Heating Element};
+
+  \path (zeus.east) ++ (18em,0) node[minimum height=4em](camera){} pic{camera} node[right=2em] (camera_label){Camera};
+
+  \path[helios] (camera_label.south) ++ (-12em,0em) node[minimum height=3.2em,minimum width=3.2em] (helios_module_start) {} pic {light_module}
+  --++ (0,-4em) pic {light_module}
+  --++ (0,-4em) pic {light_module}
+  --++ (0,-4em) pic {light_module}node[right=2em,yshift=1em,text width=4em](helios_label){Helios Light Modules}
+  ++ (0,-6em) node (light_module_end){};
+
+  \begin{pgfonlayer}{background}
+  \node[rounded corners=1em,fit=(zeus) (anemoi) (light_module_end) (helios_label) (camera_label),text height=22em, align=left,fill=yellow!20!white,align=center] (isolation_box) {Isolation Box};
+  \end{pgfonlayer}
+
+  \node[left of=isolation_box,yshift=-6em,node distance=25em,container,fill=blue!50!gray!50!white,minimum width=10em,text height=10em] (humidifier) {Humidifier};
+
+  \path[vent] (humidifier.east) ++ (0,-3.5em) |- ($(isolation_box.west)+(0,-9.5em)$);
+  \node[above of=humidifier,node distance=2em,pcb,text width=8em] (celaeno) {Celaeno \\ \footnotesize Humidifier \mbox{Control} Board};
+  \path[pcfan] (celaeno.south) --++ (0,-2em) pic {fan};
+
+  \node[above of= isolation_box, node distance=15em,anchor=south,xshift=12.5em,container,fill=gray!50!white,text centered, text width=12em,text depth=8em] (computer) {Computer};
+
+  \node[pcb,fill=white,below of=computer,anchor=south, minimum width=10em,minimum height=4em] (fg) { Framegrabber };
+
+  \node[pcb,left of= computer,anchor=east,node distance=9em, text width=10em, minimum height=6em] (arke) {Arke \\ \footnotesize RS232 - CAN \\ \footnotesize Isolated Interface};
+
+  \node[pcb,left of= arke,anchor=east,node distance=7em, text width=12em, minimum height=6em] (helios) {Helios \\ \footnotesize Master \mbox{Illumination} Board};
+
+
+
+  \path[cxp] (fg) --++ (camera);
+
+  \path[rs232] (arke) -- node[above]{\tiny RS232} (computer);
+  \path[helios] (helios.south) ++ (3em,0) --++(0,-3.5em) -| node[above left]{\tiny Helios Cable}   (helios_module_start);
+  \path[V36](helios.south) ++ (0em,-1.5em) node[below,text width=4em, text centered](V36_label){\tiny 36V DC 60W Supply} -- (helios);
+
+  \path[isolation] (helios.south) ++ (4em,1em) --++(0,-3em) -| ($(helios_module_start.east) + (1em,0)$) |- ($(helios_label.east)+(1em,3em)$) |- node[above right]{\footnotesize Isolation Barrier} ($(light_module_end) + (-2.5em,4em)$) |- ($(V36_label.south)+(0,-1em)$) -| ($(helios.south) + (-2.5em,1em)$) --++(6.5em,0);
+
+
+  \path[isolation] (arke.east) ++ (-1em,2em) --++(0,-3em) -| ($(camera.west) + (-3.5em,0)$) |- node[below right]{\footnotesize Isolation Barrier}($(camera.south)+(3em,-2em)$) -| ($(fg.east) + (1.5em,0em)$) |- ($(arke.east) + (-1em,2em)$);
+
+
+  \path[trigger] (helios.south) ++ (5em,0) --++(0,-1.5em) -| node[above left]{\tiny Trigger Cable}($(fg.west)+(-2em,-1em)$) --++ (2em,0);
+
+  \path[can] (arke.north) ++ (1em,0) --++ (0,2em) -| ($(celaeno.north)+(-3em,0)$) -- (celaeno);
+  \path[can] (arke.north) ++ (-1em,0) --++ (0,1em) node[above left]{\tiny CAN Cable}-| ($(helios.north)+(1em,0)$);
+  \path[can] (helios.north) ++ (-1em,0) --++ (0,1em) node[above left]{\tiny CAN Cable}-| ($(helios.west)+(-4em,0)$) |- (zeus);
+  \path[pcfan] (zeus.south) ++ (1.0em,0) |-++ (4em,-6em);
+
+  \path[notus] (zeus.south) ++(1.5em,0) |- ($(notus.west)+(0,-0.5em)$);
+  \path[notus] (zeus.south) ++(2.0em,0) node[below right]{\tiny Notus cable 2x}|- ($(notus.west)+(0,0.5em)$);
+  \path[i2c] (zeus.south) ++ (-0.5em,0) node[below left]{\tiny I2C}|- (anemoi);
+
+
+  \path[pcfan] (zeus.south) ++ (0em,0) -- (0em,-16em) pic{fan} node[label,right=1em] {Left \mbox{Extraction} Fan} ++ (10em,0) pic{fan} node[label,right=1em](refan_label) {Right \mbox{Extraction} Fan};
+  \path[pcfan] (zeus.south) ++ (0.5em,0) -- (0.5em,-14em) node[above right]{\tiny PC 4 Wire Fan Cable}-| (10em,-15em) ;
+
+
+  \path[V24AC] (celaeno.north) ++ (0,3em) node[above,text width=4em, text centered]{24V AC} -- (celaeno);
+
+\end{tikzpicture}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: ".tikz2pdf.tex"
+%%% End:
