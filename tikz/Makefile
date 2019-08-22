@@ -19,4 +19,4 @@ all: $(IMAGES_OBJS)
 
 %.png: %.pdf
 	@echo "   $@"
-	@$(CONVERT) $< $@
+	@$(CONVERT) -density 300 $< $@
