@@ -7,6 +7,10 @@ loop, managing illumination, managing the humidifcation process...
 
 
 ![Electronic Architecture](https://github.com/formicidae-tracker/documentation/raw/master/tikz/electronic-architecture.png)
+> __In order to lighten this diagram, the 12V Power Rails 
+> distribution from **Prometheus** to **Arke**,**Zeus**,**Helios**
+> and **Celaeno** is ommitted__
+
 
 In order to firewall any electrical issue on the system, there are two
 galvanic isolation barriers that isolate the electronic components in
@@ -26,31 +30,44 @@ The system features multiples power rails and communication bus. The main elemen
   power supply uses a 12V DC 60W powersupply, over a 5.5mm Outer
   Diameter (O.D.)  2.5mm Inner Diameter (I.D.) Barrel Jack. Excepted
   **Prometheus**, all the electronic boards uses a Molex 5557
-  connector to receive the power as depicted below.  ![12V power
-  connector](https://github.com/formicidae-tracker/documentation/raw/master/images/12V.png)
+  connector to receive the power as depicted below.  
+<img alt="12V Power Connector" src="https://github.com/formicidae-tracker/documentation/raw/master/images/12V.png" width="250" />
+
 * an illumination rails, for all the illumination equipment. Its power
   supply uses a 36V DC 60W with a 5.5mm O.D. 2.1 mm I.D.
+
+> __IMPORTANT: The choice of a 36V smaller barrel jack (2.1mm I.D.)
+>  compared to the 12V (2.5mm I.D.) is motivated to avoid any connection 
+>  by mistake of the 36V Power Supply over the 12V rails. Physically forcing 
+>  the 36V plug in the 12V receptacle of **Prometheus** would results in 
+>  instantaneous and irreversible destruction of all the 12V powered 
+>  electronics.__
+
+
 * a CAN Bus: CAN version 2A running the [libarke
   protocol](https://github.com/formicidae-tracker/libarke.git) that
-  handles most of the inter-device electronic communication.
+  handles most of the inter-device electronic communication. 
+  The connector used for these cables is illustrated below:
+<img alt="CAN Connector" src="https://github.com/formicidae-tracker/documentation/raw/master/images/CAN.png" width="250" />
+
 * a CoaXPress CXP-6 4x Link: that interfaces the computer and the camera via a
   framegrabber.
 * an illumination trigger cable that permits the synchronisation
   between the camera and the infrared lighting. It uses an open
-  collector TTL Output of the framegrabber.
+  collector TTL Output of the framegrabber. The connector for this 
+  cable is illustrated below:
+<img alt="CAN Connector" src="https://github.com/formicidae-tracker/documentation/raw/master/images/trigger.png" width="250" />
+
 * a Helios daisy chain that dispatches an isolated 6V and 36V power rails, and
-  balanced trigger and data signal.
-* A RS232 interface that connects the computer to the CAN Bus.
+  balanced trigger and data signal. These cables uses the following connector:
+<img alt="CAN Connector" src="https://github.com/formicidae-tracker/documentation/raw/master/images/helios.png" width="250" />
+
+
+* A RS232 interface that connects the computer to the CAN Bus. It uses a DB9 DCE Cable. The Arke End is connected to a DB-9 femelle connector:
+<img alt="CAN Connector" src="https://github.com/formicidae-tracker/documentation/raw/master/images/RS232.png" width="250" />
 
 
 
-
-> __IMPORTANT: The choice of a 36V smaller barrel jack (2.1mm I.D.)
->  compared to the 12V (2.5mm I.D.) is motivated to avoid any
->  mistakenly connection of the 36V Power Supply over the 12V
->  rails. Physically forcing the 36V connector in the 12V plug
->  would results in instantaneous and irreversible destruction of all
->  the 12V powered electronics.__
 
 
 # Electronic Boards Description
