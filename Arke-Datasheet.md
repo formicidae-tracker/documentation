@@ -6,7 +6,7 @@ Arke is an 3kV Isolated RS232 - CAN Interface. It implements the [CAN232](http:/
 
 * **Green:** Ready. The RS232 input buffer is empty and thus ready to transmit and receive.
 * **Orange:** Data. The CAN buffer is not empty, i.e. the device is receiving or transmitting a CAN Frame. Normal situation.
-* **Blinking:** Error. Please notice that when a CAN Frame is not acknowledged, this will trigger an exceptional condition. Press the reset button to clear the error.
+* **Red:** : Error. Please notice that when a CAN Frame is not acknowledged, this will trigger an exceptional condition. Press the reset button to clear the error.
 
 ## Connections:
 
