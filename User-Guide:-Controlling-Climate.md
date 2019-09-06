@@ -2,13 +2,13 @@
 
 TLDR: Always:
  * Operate the system in a room maintained at a temperature 2 to 3°C below the minimal desired temperature
- * Always make sure the himidifcator is operating properly.
+ * Always make sure the humidification is operating properly.
 
-In order to ensure a sufficient image quality for computer vision processing, powerful infrared flashes are used in synchronization with the camera. The illumination system can consume in average up to 60W of power, that will be dissipated in the box. Therefore a sufficient cooling system should be used to keep the ant under a desired climate (between 22°C and 29°C depending on the species). Unmonitored heat can easily build up in the isolated boxes, and put in danger the life of the ant colony.
+In order to ensure a sufficient image quality for computer vision processing, powerful infrared flashes are used in synchronization with the camera. The illumination system can consume in average up to 60W of power, that will be dissipated in the box. Therefore a sufficient cooling system should be used to keep the ant under a desired climate (between 22°C and 29°C depending on the species). Heat can easily build up in the isolated boxes, and put in danger the life of the ant colony.
 
-In order to cool down the box, two effect are used:
-* Using cooler air from the tracking room, that should be climatised and kept arround 21°C.
-* Raising the air relative air humidity between 60% R.H and 70% R.H. For example, humidfying a dry air at 20°C and 20% R.H. to 60% R.H. will lower its temperature up to 13°C. Even if its counter intuitive, this effect could even be stronger than replacing the box air with the room air.
+To cool down the box, two effect are used:
+* Intake of cooler air from the surrounding tracking room, that should be climatised and kept around 21°C.
+* Increase of the humidity to 60% R.H - 70% R.H. For example, humidifying a dry air at 20°C and 20% R.H. to 60% R.H. will lower its temperature up to 13°C. Even if its counter intuitive, this effect could even be stronger than replacing the box air with the room air.
 
 Therefore there is a strong coupling between the humidification and the temperature control in the box. It explains, why, having a humidifier failure over an extended period of time could lead to an harmful temperature for the ants.
 
@@ -24,10 +24,10 @@ The current version of fort have been tested to be able to only allow an increas
 4. Verify that the CAN bus daisy chain is set up properly
 5. Verify that RS232 cable is plugged to Arke and the controlling computer.
 6. Plug the electronic main power.
-7. Run the zeus command on the master computer. 
+7. Run the zeus command on the master computer.
 ```bash
 zeus -c my_desired_climate.season run
 ```
 8. Verify on the Olympus gateway that the box climate is running.
 
-Please refer to the [zeus](https://github.com/formicidae-tracker/zeus) to learn more about the zeus command and the season file format.
+Please refer to the [zeus](https://github.com/formicidae-tracker/zeus) to learn more about the zeus command, the season file format and its capabilities.

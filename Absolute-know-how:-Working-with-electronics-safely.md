@@ -1,4 +1,4 @@
-A list with what we need to mention at some point:
+A list with what we need to mention about working with electronics at some point:
 
 - Wait at least 30 minutes after switching off the tracking experiment before
 unplugging the light board due to the capacitors.
