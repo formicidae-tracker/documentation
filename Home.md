@@ -16,8 +16,8 @@ The Technical Description section hosts an overview of the system architecture a
 
 * [[Absolute know-how: Working with electronics safely]]
 * [[User Guide: Controlling Climate|User-Guide:-Controlling-Climate]]
-* [[User Guide: Setting up the camera properly|User-Guide:-Setting-up-the-camera]]
-* [[User Guide: Refilling the humidifier||User-Guide:-Refilling-the-humidifier]]
+* [[User Guide: Setting up the camera properly|User-Guide:-Setting-up-the-camera-properly]]
+* [[User Guide: Refilling the humidifier|User-Guide:-Refilling-the-humidifier]]
 * [[User Guide: Starting a tracking experiment]]
 
 # Technical Guides

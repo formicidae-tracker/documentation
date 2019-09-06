@@ -1,10 +1,17 @@
 # Celaeno
 
+
 ## Operation:
 
 When the board is powered up and the water tanked is fully filled, the green LED pulses slowly. Using the **hermes** protocol, any device on the bus can activate the humidificator, with a value between 1 and 255. The higher this value, the faster the fan will spin. After a ramp-up time, the humidificator will turn on the Piezo transducer to producing mist which is then propelled to the ant box using the fan. When switched off, the Piezo is immediately shut down, but the fan continues to spin for a few seconds. This avoids that condensation builds up on the fan, that will eventually damage it.
 
 When the water level will becomes low, the orange LED is constantly on and the board repetitively sends an alarm over the CAN bus. When the critical level is reached, the mist production is shut down, the orange LED blinks and an alarm signal is sent repetitively over the CAN bus.
+
+## Schematics
+
+![Celaeno revB Drawings](https://media.githubusercontent.com/media/formicidae-tracker/hardware/master/ecad/climate/celaeno/export/output.png)
+
+Full ECAD data can be found in https://github.com/formicidae-tracker/hardware/tree/master/ecad/climate/celaeno
 
 ## Connections:
 
