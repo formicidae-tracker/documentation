@@ -1,6 +1,6 @@
 FORT is designed to allow a remote monitoring of multiple experiments running in parallel, to save space in the experiment room and at the same time offer a simple and modular hardware setup. The resulting IT infrastructure is explained in the chart below.
 
-<img alt="IT Infrastructure overview" src="/home/matthias/Documents/fomicidae-tracker/documentation/images/network_explained.png" width="300" />
+<img alt="IT Infrastructure overview" src="https://github.com/formicidae-tracker/documentation/raw/draft-matthias/images/network_explained.png" width="300" />
 
 ## Local tracking network
 A local network (pink lines, give the protocol) connects all the tracking host via the switch. In the master-slave configuration, several slave hosts can be daisy-chained to a master via the frame-grabber directly to improve the frame rate (blue line, for more information see xx). Each of the n hosts then processes only every n-th frame and ends the tracking data to the master via the network. There, the data is assembled and written to the output file.
