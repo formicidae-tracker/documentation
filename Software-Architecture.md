@@ -19,6 +19,7 @@ The FORT vision system operates in infrared to allow tracking at night. Infrared
 The following chart explains the climate software and firmware components.
 
 <img alt="Tracking network" src="https://github.com/formicidae-tracker/documentation/raw/draft-matthias/images/swfw_structure_climate.png" width="300" />
+
 > Grey boxes represent components developed in the course of the FORT project, white boxes represent external components. Green shadowed boxes represent firmware
 
 **zeus** is the top level component that orchestrates the climate control system. A *.season* file allows to program climate states and transitions such as day and night. The zeus host application (shown on top of the figure) loads the configuration and initiates the climate control by providing a climate set-point to the zeus board. **zeus-calibrator** (not shown) is a helper program on the host to infer climate sensor offsets on the board. To use it, at least one additional **anemoi** board must be connected to the I2C bus (see below).
