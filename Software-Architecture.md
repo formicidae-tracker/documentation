@@ -3,7 +3,7 @@ The design of FORT strictly separates the climate control from the vision in har
 # Tracking
 The following chart explains the tracking software components.
 
-<img alt="Tracking network" src="https://github.com/formicidae-tracker/documentation/raw/draft-matthias/images/sw_structure_vision.png" width="400" />
+<img alt="Tracking network" src="https://github.com/formicidae-tracker/documentation/raw/master/images/sw_structure_vision.png" width="400" />
 
 > Grey boxes represent components developed in the course of the FORT project, white boxes represent external components.
 
@@ -16,7 +16,7 @@ The following chart explains the tracking software components.
 # Climate
 The following chart explains the climate software and firmware components.
 
-<img alt="Tracking network" src="https://github.com/formicidae-tracker/documentation/raw/draft-matthias/images/swfw_structure_climate.png" width="300" />
+<img alt="Tracking network" src="https://github.com/formicidae-tracker/documentation/raw/master/images/swfw_structure_climate.png" width="300" />
 
 > Grey boxes represent components developed in the course of the FORT project, white boxes represent external components. Green shadowed boxes represent firmware. For firmware description, refer to the [[Electronic Architecture|Electronic-Architecture]] page
 

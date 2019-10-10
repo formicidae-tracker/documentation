@@ -5,7 +5,7 @@ organized with a modular architecture, were each electronic board
 endorses a few roles only, such has implementing the climate control
 loop, managing illumination, managing the humidification process...
 
-<img alt="Fort overview" src="https://github.com/formicidae-tracker/documentation/raw/draft-matthias/images/FORTplan.png"/>
+<img alt="Fort overview" src="https://github.com/formicidae-tracker/documentation/raw/master/images/FORTplan.png"/>
 
 > Schematic overview of the FORT setup with photo of one instance at UNIL. The tracking host computer is not show on the photo.
 
