@@ -12,7 +12,7 @@ loop, managing illumination, managing the humidification process...
 The following schematic diagram shows the electronic components and connections of the FORT.
 
 ![Electronic Architecture](https://github.com/formicidae-tracker/documentation/raw/master/tikz/electronic-architecture.png)
-> In order to lighten this diagram, the 12V Power Rails distribution from **Prometheus** to **Arke**, **Zeus**, **Helios** and **Celaeno** are ommitted.
+> __In order to lighten this diagram, the 12V Power Rails distribution from **Prometheus** to **Arke**, **Zeus**, **Helios** and **Celaeno** are ommitted__.
 
 
 In order to firewall any electrical issue on the system, there are two

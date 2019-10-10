@@ -1,4 +1,8 @@
-FORT is designed to allow a remote monitoring of multiple experiments running in parallel, to save space in the experiment room and at the same time offer a simple and modular hardware setup. The resulting IT infrastructure is explained in the chart below.
+
+Due to the very nature of the tracking system, that has to deal with large amounts of binary data, that need to be distributed in real time between several computers in order to perform online computation, the IT infrastructure has been designed across modular micro services to simplify the development and ease the use of the system. The philosophy of the infrastructure is to have low to none security in any of the standard service (SSH, VNC) or application specific services (Leto, Zeus). Therefore it is advised to run the FORT Setup in a strictly private Local Area Network behind a properly configured firewall.
+
+For the end user this means that any operation (configuration, starting and stopping experiment) on the system has to be performed on site and cannot be done remotely. A webapp has been designed to remotely monitor the setup via a webserver, however, it doesn't allow any control of the system, by design.
+The resulting IT infrastructure is explained in the chart below.
 
 <img alt="IT Infrastructure overview" src="https://github.com/formicidae-tracker/documentation/raw/draft-matthias/images/network_explained.png" width="300" />
 
@@ -16,7 +20,7 @@ Any PC that meets the basic requirements can be connected to the local network t
 This allows users to prepare and preserve their configuration files on private laptops.
 
 ## Gateway
-The gateway computer separates the local tracking network from the internet and hosts the **olympus** webapp that displays climate data, warnings and errors. It also provides the ports for the web streaming of the tracking video output.
+The gateway computer separates the local tracking network from the internet and hosts the **olympus** webapp that displays climate data, warnings and errors. It also provides a streaming webserver to remotely monitor ongoing tracking experiments.
 
 # Conclusion
 * To setup an experiment, the user needs a setup PC and access to the local tracking network switch.

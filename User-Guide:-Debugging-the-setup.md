@@ -11,8 +11,7 @@ scp seasonfile.season fort-user@master-name.local:
 * ssh fort-user@runestone.local pw:123456
 or via remmina
 `temnothorax.season run`
-for the climate data live feed on any PC connected to the local network (__Iron throne__), go to a browser (chrome preferred) and:
-`castle-black.local:3000`
+for the climate data live feed on any PC connected to the local network, use a web browser (chrome preferred) and and connect to the gateway address.
 
 Command line tools that can be used on any master (connection via VNC, e.g. remmina):
 
@@ -24,9 +23,10 @@ Before unplugging the light board, always unplug the main power for the arke boa
 
 * To see the camera live feed
 ```bash
-artemis -d
+leto-cli
 ```
-Arrows and the mouse can be used to pan and zoom the image
+Using the leto-client without providing an experiment name starts the test mode.
+This allows to get live images with overlayed tag detection to adjust the optics for an optimal result. A watermark "test-mode" on the video indicates that no data is currently saved.
 
 # Hardware connectivity
 
