@@ -15,5 +15,3 @@ Check out our ongoing experiments in live! (Link to anttrack)
 ### [Read here about the project's history including publications etc.](/history)
 
 ### [Read here about the contributors](/about)
-
-{% twitter_follow_button %}
