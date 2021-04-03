@@ -216,8 +216,6 @@ GEM
     octokit (4.20.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
-    octopress-social (1.4.5)
-      jekyll (>= 2.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -260,9 +258,8 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (~> 214)
-  jekyll-feed (~> 0.12)
-  minima (~> 2.5)
-  octopress-social
+  jekyll-feed (~> 0.15.1)
+  jekyll-theme-slate (~> 0.1.1)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
