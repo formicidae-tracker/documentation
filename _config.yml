@@ -18,17 +18,26 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: FORmicidae Tracker
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: FORmicidae Tracker Project
+email: laurent.keller@unil.ch
+description: Marker based insect tracking poject. Hardware, Software, Project history, Contributors etc. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: KellerLab_Ants
 github_username:  formicidae-tracker
 markdown: kramdown
+
+twitter:
+  username: KellerLab_Ants # Add your Twitter handle
+  tweet_count: false # Show number of shares on Twitter
+  size: normal # Or large
+  embedded_link_color: # Set link color for embedded tweets
+
+  follow_count:				  false              # Show number of followers
+  tweet_message:       ":title by :username :hashtags - :url" # With Tweet button Twitter add the URL last
+  tweet_link_text:     Twitter            # Configure the link text
+  tweet_link_title:    Share on Twitter   # Share link title
+  profile_link_text:   Follow :username
+  profile_link_title:  Follow :username on Twitter  # Profile link title text
 
 # Build settings
 theme: jekyll-theme-slate
