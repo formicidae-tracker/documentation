@@ -41,8 +41,7 @@ twitter:
   profile_link_title:  Follow :username on Twitter  # Profile link title text
 
 # Build settings
-theme: jekyll-theme-cayman
-remote-theme: jekyll-theme-cayman
+theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
 
