@@ -42,6 +42,7 @@ twitter:
 
 # Build settings
 theme: jekyll-theme-cayman
+remote-theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 
