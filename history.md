@@ -1,7 +1,7 @@
 ---
 -layout: default
 -title: History
--permalink: documentation/history/
+-permalink: history/
 ---
 
 ### This is a page about the history of the tracking project

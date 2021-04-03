@@ -10,9 +10,9 @@
 ## Tracking webcam
 Check out our ongoing experiments in live! (Link to anttrack)
 
-### [Here is a link to the projects general documentation](documentation/wiki)
+### [Here is a link to the projects general documentation](https://github.com/formicidae-tracker/documentation/wiki)
 
-### [Read here about the project's history including publications etc.](documentation/history)
+### [Read here about the project's history including publications etc.](history)
 
-### [Read here about the contributors](documentation/about)
+### [Read here about the contributors](about)
 
